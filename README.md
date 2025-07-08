@@ -1,4 +1,4 @@
-A simple Express.js app that explores different authentication methods using (https://secrets-api.appbrewery.com/).
+A simple Express.js app that explores different authentication methods using secrets API(https://secrets-api.appbrewery.com/).
 
 Features
 
