@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Auth Demo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .button-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 30px;
+      }
+
+      button {
+        padding: 14px 20px;
+        font-size: 15px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      #noAuth {
+        background-color: #3498db;
+      }
+
+      #basicAuth {
+        background-color: #2ecc71;
+      }
+
+      #apiKey {
+        background-color: #f39c12;
+      }
+
+      #bearerToken {
+        background-color: #e74c3c;
+      }
+
+      .response-area {
+        width: 100%;
+        max-width: 800px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        color: #fff;
+        font-size: 14px;
+        overflow-x: auto;
+        word-break: break-word;
+        white-space: pre-wrap;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      ::selection {
+        background-color: #ffcb05;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Secret API Explorer 🚀</h1>
+
+    <div class="button-group">
+      <button id="noAuth" onclick="window.location.href='/noAuth'">
+        No Auth
+      </button>
+      <button id="basicAuth" onclick="window.location.href='/basicAuth'">
+        Basic Auth
+      </button>
+      <button id="apiKey" onclick="window.location.href='/apiKey'">
+        API Key
+      </button>
+      <button id="bearerToken" onclick="window.location.href='/bearerToken'">
+        Bearer Token
+      </button>
+    </div>
+
+    <div class="response-area"><%= content %></div>
+  </body>
+</html>
